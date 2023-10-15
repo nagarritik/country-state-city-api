@@ -1,5 +1,5 @@
 import express from "express";
-import path, { join } from 'path'
+import cors from 'cors'
 import { Country, State, City } from "country-state-city";
 
 const app = express();
@@ -14,6 +14,7 @@ const data = [
     '/api/v1/city/bycountry/:id',
     '/api/v1/city/bycountryandstate/:id/:id2'
 ]
+app.use(cors())
 
 app.listen(port, () => {
   console.log("I am up and running");
